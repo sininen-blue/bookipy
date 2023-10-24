@@ -33,7 +33,7 @@ def register():
             try:
                 db.execute(
                     "INSERT INTO user (username, password) VALUES (?, ?)",
-                    (username, generate_password_has(password)),
+                    (username, generate_password_hash(password)),
                 )
                 db.commit()
             except db.IntegrityError:
@@ -59,7 +59,7 @@ def login():
 
         if user is None:
             error = "Invalid Username"
-        elif chick_password_hash(user["password"], password) == False:
+        elif check_password_hash(user["password"], password) is False:
             error = "Wrong password"
 
         if error is None:
