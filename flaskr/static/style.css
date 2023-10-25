@@ -28,61 +28,18 @@ a:visited {
   color: #373737;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #373737;
-}
-
-nav ul {
-  margin-left: auto;
-  display: flex;
-  list-style: none;
-}
-
-nav ul li {
-  padding-left: 20px;
-}
-
-h1 {
-  font-size: 18px;
-  font-weight: normal;
-  padding: 10px 0px;
-}
-
-.content {
+form {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
-.content form {
-  display: flex;
-  flex-direction: column;
+form input {
+  margin-top: 10px;
 }
 
-.content form input {
-  margin-bottom: 12px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #373737;
-
-  background-color: #eaeaea;
-}
-
-.content form input[type="submit"] {
+form button {
+  margin-top: 10px;
   margin-left: auto;
-  width: 100px;
-  padding: 4px 8px;
-
-  font-family: serif;
-  font-size: 15px;
-  font-weight: bold;
-  font-variant: small-caps;
-  text-decoration-line: none;
-  letter-spacing: 0.07em;
-
-  color: black;
-  background-color: #eaeaea;
-  border: none;
+  width: 200px;
 }
