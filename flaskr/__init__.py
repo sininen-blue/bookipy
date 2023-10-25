@@ -1,4 +1,5 @@
 import os
+
 from flask import Flask
 
 
@@ -31,5 +32,10 @@ def create_app(test_config=None):
     from . import db
 
     db.init_app(app)
+
+    from . import book
+
+    app.register_blueprint(book.bp)
+    app.add_url_rule("/", endpoint="index")
 
     return app

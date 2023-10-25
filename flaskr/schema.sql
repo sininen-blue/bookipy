@@ -7,7 +7,7 @@ CREATE TABLE user (
     password TEXT NOT NULL
 );
 
-CREATE TABLE book (
+CREATE TABLE chapter (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     owner_id INTEGER NOT NULL,
     created TIMESTAMP NOT NULL,
