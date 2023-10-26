@@ -8,11 +8,11 @@
 
 <body>
   {% if chapter_content %}
-
-  {% for block in chapter_content %}
-  {{ block|safe }}
-  {% endfor %}
-
+  <article>
+    {% for block in chapter_content %}
+    {{ block|safe }}
+    {% endfor %}
+  </article>
   {% endif %}
 
   <form method="post">

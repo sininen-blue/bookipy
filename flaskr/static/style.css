@@ -1,6 +1,6 @@
 html {
   font-family: serif;
-  font-size: 16px;
+  font-size: 19px;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern";
 }
@@ -8,7 +8,10 @@ html {
 body {
   margin-left: auto;
   margin-right: auto;
-  max-width: 500px;
+  max-width: 570px;
+
+  background-color: #E9E2C9;
+  color: #585148;
 }
 
 a {
@@ -42,4 +45,9 @@ form button {
   margin-top: 10px;
   margin-left: auto;
   width: 200px;
+}
+
+article p {
+  margin-top: 0px;
+  margin-bottom: 12px;
 }
