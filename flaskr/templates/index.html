@@ -7,6 +7,8 @@
 </head>
 
 <body>
+
+  <div class="next-page" id="next-page"></div>
   {% if chapter_content %}
   <article>
     {% for block in chapter_content %}
@@ -20,6 +22,11 @@
     <input type="url" id="chapter_url" name="chapter_url">
     <button type="submit">Start</button>
   </form>
+
+
+  <script>
+    document.getElementById("next-page").onclick = function () {window.scrollBy(0, window.innerHeight)};
+  </script>
 </body>
 
 </html>
