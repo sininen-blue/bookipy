@@ -1,6 +1,6 @@
 html {
-  font-family: serif;
-  font-size: 16px;
+  font-family: "Source Serif 4", serif;
+  font-size: 19px;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern";
 }
@@ -8,81 +8,45 @@ html {
 body {
   margin-left: auto;
   margin-right: auto;
-  max-width: 500px;
+  max-width: 570px;
+
+  background-color: #E9E2C9;
+  color: #585148;
 }
 
 a {
-  padding: 2px 7px 2px 7px;
-  color: black;
+  color: #66615C;
   text-decoration-line: none;
   font-variant: small-caps;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 
 a:hover {
-  background: #eaeaea;
+  background: #E9E1C3;
   border-radius: 8px;
 }
 
 a:visited {
-  color: #373737;
+  color: #918A83;
 }
 
-nav {
+form {
   display: flex;
-  align-items: center;
-  border-bottom: 1px solid #373737;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-nav ul {
+form input {
+  margin-top: 10px;
+}
+
+form button {
+  margin-top: 10px;
   margin-left: auto;
-  display: flex;
-  list-style: none;
+  width: 200px;
 }
 
-nav ul li {
-  padding-left: 20px;
-}
-
-h1 {
-  font-size: 18px;
-  font-weight: normal;
-  padding: 10px 0px;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
-.content form {
-  display: flex;
-  flex-direction: column;
-}
-
-.content form input {
+article p {
+  margin-top: 0px;
   margin-bottom: 12px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #373737;
-
-  background-color: #eaeaea;
-}
-
-.content form input[type="submit"] {
-  margin-left: auto;
-  width: 100px;
-  padding: 4px 8px;
-
-  font-family: serif;
-  font-size: 15px;
-  font-weight: bold;
-  font-variant: small-caps;
-  text-decoration-line: none;
-  letter-spacing: 0.07em;
-
-  color: black;
-  background-color: #eaeaea;
-  border: none;
 }
