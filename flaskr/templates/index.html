@@ -7,10 +7,8 @@
 </head>
 
 <body>
-
-  <div class="next-page" id="next-page"></div>
   {% if chapter_content %}
-  <article>
+  <article id="main">
     {% for block in chapter_content %}
     {{ block|safe }}
     {% endfor %}
@@ -24,9 +22,7 @@
   </form>
 
 
-  <script>
-    document.getElementById("next-page").onclick = function () {window.scrollBy(0, window.innerHeight)};
-  </script>
+  <script src="{{ url_for('static', filename='page-turner.js') }}"></script>
 </body>
 
 </html>
