@@ -14,6 +14,8 @@ def index_get():
 
 @app.post("/process")
 def process():
+    final_chapter_content.clear()
+    
     chapter_url = request.form["chapter_url"]
 
     page = requests.get(chapter_url)
@@ -22,9 +24,12 @@ def process():
     chapter_content = soup.find(class_="chapter-content")
     chapter_content = soup.find_all("p")
 
+    chapter_title = soup.find(class_="break-word").text
+
+    final_chapter_content.append(f"<h1>{chapter_title}</h1>")
+    
     for block in chapter_content:
         if block.text.isspace() is False:
-            # remove the text from the span and put it into a block
             final_chapter_content.append(block)
 
     return redirect(url_for('page'))

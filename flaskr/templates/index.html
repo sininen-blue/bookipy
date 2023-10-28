@@ -8,7 +8,7 @@
 
 <body>
   {% if chapter_content %}
-  <article>
+  <article id="main">
     {% for block in chapter_content %}
     {{ block|safe }}
     {% endfor %}
@@ -20,6 +20,9 @@
     <input type="url" id="chapter_url" name="chapter_url">
     <button type="submit">Start</button>
   </form>
+
+
+  <script src="{{ url_for('static', filename='page-turner.js') }}"></script>
 </body>
 
 </html>
