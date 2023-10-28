@@ -20,10 +20,10 @@ let full_height = Math.max(
   document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight
 );
 let page_height = window.innerHeight;
-
 let page_count = Math.floor(full_height / page_height);
 
 
+// generates the page markers
 for (let i = 0; i <= page_count; i++) {
   let page_marker = document.createElement("div");
   page_marker.setAttribute("id", "page-" + i);
@@ -40,23 +40,31 @@ for (let i = 0; i <= page_count; i++) {
   document.getElementById("main").appendChild(page_marker);
 }
 
+
+// handles the page turning
 const pages = document.querySelectorAll(".page");
 const targetElement = document.documentElement;
 
-document.addEventListener('click', function(event) {
+document.addEventListener('mousedown, touchend', function(event) {
   const clickX = event.clientX;
   const clickY = event.clientY;
 
   const targetRect = targetElement.getBoundingClientRect();
 
+
   if (
-    clickX >= targetRect.left &&
+    clickX >= targetRect.left + ((targetRect.right / 3) * 2) &&
     clickX <= targetRect.right &&
     clickY >= targetRect.top &&
     clickY <= targetRect.bottom
   ) {
     let currentPage = findClosestElement(pages).id.substring(5);
     let nextPage = parseInt(currentPage) + 1
-    window.location.href = "#page-" + nextPage;
+    nextPage = "#page-" + nextPage;
+
+    // this means the page isn't going to be on the url
+    document.querySelector(nextPage).scrollIntoView({
+      behavior: 'smooth'
+    });
   }
 });
